@@ -1,0 +1,10 @@
+WAVEFRAME 98 PWA 배포 체크리스트
+
+[ ] ZIP 압축 해제
+[ ] 안쪽 파일 전체를 GitHub 저장소 최상위에 업로드 (index.html이 root)
+[ ] Settings > Pages > Deploy from a branch > main / (root)
+[ ] GitHub Pages HTTPS 주소로 Chrome 접속
+[ ] 앱 설치 버튼 또는 Chrome 메뉴의 설치 항목으로 설치
+[ ] 설치 후 앱 실행 및 오프라인 앱 셸 열기 확인
+
+주의: 개인 음악/이미지/영상은 GitHub 저장소에 올리지 마세요.
