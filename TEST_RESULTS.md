@@ -1,8 +1,7 @@
-# FIX5 정적 점검
-- manifest JSON: 정상
-- 192x192 및 512x512 아이콘 참조: 정상
-- index.html manifest cache-bust URL: 포함
-- index.html 새 서비스 워커 파일명 등록: 포함
-- service-worker-fix5.js: 생성
-- 새 캐시 네임스페이스: 포함
-- 실제 GitHub Pages/Android Chrome 설치: 기기에서 확인 필요
+# FIX6 정적 검사
+- manifest JSON 파싱: 통과
+- manifest 아이콘 경로: ./icon-192.png, ./icon-512.png
+- 두 파일이 패키지 최상위에 존재: 통과
+- PNG 디코딩: 통과
+- 신규 service worker 파일: 통과
+- 실제 GitHub Pages/Android Chrome 설치: 배포 후 확인 필요
