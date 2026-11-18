@@ -1,10 +1,10 @@
 {
-  "id": "./",
+  "id": "./index.html",
   "name": "WAVEFRAME 98 · Pixel Music Video Workstation",
   "short_name": "WAVEFRAME 98",
   "description": "레트로 픽셀 감성의 모바일 음악·가사 영상 편집 스튜디오",
   "lang": "ko-KR",
-  "start_url": "./",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "display_override": [
@@ -37,6 +37,16 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    }
+  ],
+  "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "./screenshots/mobile-preview.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "WAVEFRAME 98 mobile editor"
     }
   ]
 }

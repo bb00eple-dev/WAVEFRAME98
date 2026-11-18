@@ -1,17 +1,6 @@
-# WAVEFRAME 98 GitHub PWA package · verification notes
-
-## Passed
-- `manifest.webmanifest` parses as valid JSON.
-- Manifest declares `start_url`, `scope`, and `display: standalone`.
-- All manifest icon paths exist; PNG dimensions are square and match their names.
-- Both inline JavaScript blocks pass `node --check`.
-- `service-worker.js` passes `node --check`.
-- Existing V5.1 Pixel editor regression test ran against the packaged `index.html`.
-- Previous tested features passed: lyric import mapping, two/three-line setup, work-view tabs, lyric-block drag/resize, element locks, project JSON export, and responsive widths 320–1280px with no horizontal overflow.
-
-## Not verified here
-- Service-worker installation and offline reload in a real HTTPS GitHub Pages deployment. The local browser test environment blocked localhost navigation, so final PWA lifecycle verification must be done after publishing to GitHub Pages.
-- Actual installation UI on the user's Android Chrome device.
-- Media recording/export behavior across physical Android devices and codecs.
-
-The PWA files are structured for GitHub Pages project paths and use relative URLs, but device-level installation should be confirmed after publishing over HTTPS.
+# PWA FIX2 점검
+- manifest JSON 파싱 및 id/start_url/scope/display 선언: 확인
+- 192/512 아이콘 파일 존재 및 크기: 확인
+- 서비스 워커 설치 실패 내성: 반영
+- 설치 버튼 진단 코드: 반영
+- 실제 GitHub Pages HTTPS 배포 및 Android Chrome 설치창: 이 환경에서 검증 불가, 사용자 기기 확인 필요

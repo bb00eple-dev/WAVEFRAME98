@@ -1,9 +1,7 @@
-WAVEFRAME 98 PWA 설치 문제 안내
+WAVEFRAME 98 PWA FIX2
 
-앱 내부 설치 버튼을 눌렀을 때 설치 창이 열리지 않는 경우:
-- HTTPS의 GitHub Pages 주소인지 확인합니다.
-- Android Chrome에서 열었는지 확인합니다.
-- 배포 후 새로고침하여 service-worker.js v2를 적용합니다.
-- Chrome이 beforeinstallprompt 이벤트를 제공하지 않으면 웹페이지 버튼으로 강제 설치할 수 없습니다. 이때 Chrome ⋮ 메뉴의 앱 설치/홈 화면에 추가를 사용합니다.
+GitHub 저장소 최상위에 index.html, manifest.webmanifest, service-worker.js, icons/ 폴더, screenshots/ 폴더를 모두 덮어써 주세요.
 
-이 패키지는 APK가 아닙니다. Android Chrome의 PWA 설치 기능을 사용하는 웹앱입니다. 실제 설치 여부는 배포된 GitHub Pages 사이트와 기기에서 확인해야 합니다.
+이번 수정: manifest id/start_url 명시, scope 정리, 서비스 워커 캐시 설치를 개별 처리해 일부 파일 실패로 SW 설치가 취소되지 않도록 변경, SW 캐시 버전 갱신, 앱 내부 설치 버튼에 진단 추가.
+
+배포 후 Android Chrome에서 Pages HTTPS 주소를 열고 새로고침한 뒤 앱 설치 버튼을 눌러 진단 결과를 확인하세요. 설치 가능 여부는 실제 Chrome이 판단하며 코드가 강제할 수 없습니다.
