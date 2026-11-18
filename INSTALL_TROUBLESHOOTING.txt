@@ -1,18 +1,7 @@
-WAVEFRAME 98 PWA FIX4
+FIX5 업데이트 방법
 
-중요한 원인:
-이전 서비스 워커는 매니페스트와 앱 문서를 캐시 우선으로 반환할 수 있었습니다.
-따라서 GitHub에 새 manifest를 올려도 Chrome 진단이 이전 index/manifest를 계속 읽을 수 있었습니다.
+브라우저 데이터 삭제 없이 새 서비스 워커를 등록하도록 구성했습니다.
+GitHub 저장소 최상위에 index.html을 덮어쓰고 service-worker-fix5.js를 새 파일로 추가하세요. manifest.webmanifest도 패키지의 파일로 덮어쓰세요.
+기존 service-worker.js는 지우지 않아도 됩니다.
 
-FIX4:
-- manifest에서 maskable 아이콘 참조 제거
-- service worker 캐시 버전 v5로 변경
-- index.html 및 manifest.webmanifest는 네트워크 우선으로 읽어 업데이트 반영
-- 이전 waveframe98-pwa-* 캐시 삭제
-- 진단창에 실제 manifest URL 표시
-
-업데이트:
-GitHub 저장소 최상위에 index.html, manifest.webmanifest, service-worker.js를 반드시 덮어씁니다.
-기존 icons 폴더도 그대로 유지합니다.
-
-배포 후 Chrome에서 사이트를 새로고침합니다. 이전 서비스 워커가 즉시 교체되지 않으면 사이트 데이터 삭제 후 다시 열어 주세요.
+배포 후 Chrome에서 사이트를 새로고침하세요. 앱 내부 설치 진단은 실제 manifest URL과 service worker 제어 상태를 보여줍니다.

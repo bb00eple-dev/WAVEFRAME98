@@ -1,7 +1,8 @@
-# FIX4 정적 점검
-- manifest JSON 파싱: 통과
-- 선언된 아이콘 192/512만 존재: 통과
-- service worker cache version v5: 통과
-- index/manifest network-first: 통과
-- 이전 waveframe98-pwa-* 캐시 정리 로직: 통과
-- 실제 Android Chrome 설치: 배포 기기 확인 필요
+# FIX5 정적 점검
+- manifest JSON: 정상
+- 192x192 및 512x512 아이콘 참조: 정상
+- index.html manifest cache-bust URL: 포함
+- index.html 새 서비스 워커 파일명 등록: 포함
+- service-worker-fix5.js: 생성
+- 새 캐시 네임스페이스: 포함
+- 실제 GitHub Pages/Android Chrome 설치: 기기에서 확인 필요
