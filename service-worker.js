@@ -1,7 +1,74 @@
-/* WAVEFRAME 98 PWA · resilient GitHub Pages service worker */
-const CACHE_NAME='waveframe98-pwa-v4';
-const ROOT=new URL('./',self.registration.scope).href;
-const FILES=['index.html','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-512-maskable.png','icons/apple-touch-icon.png'].map(x=>new URL(x,ROOT).href);
-self.addEventListener('install',e=>e.waitUntil((async()=>{const c=await caches.open(CACHE_NAME);for(const u of FILES){try{const r=await fetch(u,{cache:'reload'});if(r.ok)await c.put(u,r)}catch(_){}}await self.skipWaiting()})()));
-self.addEventListener('activate',e=>e.waitUntil((async()=>{const ks=await caches.keys();await Promise.all(ks.filter(k=>k.startsWith('waveframe98-')&&k!==CACHE_NAME).map(k=>caches.delete(k)));await self.clients.claim()})()));
-self.addEventListener('fetch',e=>{const q=e.request;if(q.method!=='GET')return;const u=new URL(q.url);if(u.origin!==self.location.origin)return;if(q.mode==='navigate'){e.respondWith((async()=>{try{const r=await fetch(q);if(r.ok){const c=await caches.open(CACHE_NAME);await c.put(q,r.clone())}return r}catch(_){const c=await caches.open(CACHE_NAME);return await c.match(q)||await c.match(new URL('index.html',ROOT).href)||Response.error()}})());return}e.respondWith((async()=>{const c=await caches.open(CACHE_NAME);const hit=await c.match(q);if(hit)return hit;try{const r=await fetch(q);if(r.ok&&u.pathname.startsWith(new URL(ROOT).pathname))await c.put(q,r.clone());return r}catch(_){return hit||Response.error()}})())});
+/* WAVEFRAME 98 PWA · FIX4 update-safe service worker */
+const CACHE_NAME = 'waveframe98-pwa-v5';
+const ROOT = new URL('./', self.registration.scope).href;
+const SHELL = [
+  'index.html',
+  'manifest.webmanifest',
+  'icons/icon-192.png',
+  'icons/icon-512.png'
+].map(path => new URL(path, ROOT).href);
+
+self.addEventListener('install', event => {
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    for (const url of SHELL) {
+      try {
+        const response = await fetch(url, { cache: 'reload' });
+        if (response.ok) await cache.put(url, response);
+      } catch (_) {}
+    }
+    await self.skipWaiting();
+  })());
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys
+      .filter(key => key.startsWith('waveframe98-pwa-') && key !== CACHE_NAME)
+      .map(key => caches.delete(key)));
+    await self.clients.claim();
+  })());
+});
+
+self.addEventListener('fetch', event => {
+  const request = event.request;
+  if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+
+  const isShellDocument = request.mode === 'navigate' ||
+    url.pathname.endsWith('/manifest.webmanifest') ||
+    url.pathname.endsWith('/index.html');
+
+  if (isShellDocument) {
+    event.respondWith((async () => {
+      const cache = await caches.open(CACHE_NAME);
+      try {
+        const response = await fetch(request, { cache: 'no-store' });
+        if (response.ok) await cache.put(request, response.clone());
+        return response;
+      } catch (_) {
+        return (await cache.match(request)) ||
+          (await cache.match(new URL('index.html', ROOT).href)) ||
+          Response.error();
+      }
+    })());
+    return;
+  }
+
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    const cached = await cache.match(request);
+    if (cached) return cached;
+    try {
+      const response = await fetch(request);
+      if (response.ok && url.pathname.startsWith(new URL(ROOT).pathname)) {
+        await cache.put(request, response.clone());
+      }
+      return response;
+    } catch (_) {
+      return Response.error();
+    }
+  })());
+});

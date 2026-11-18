@@ -1,7 +1,18 @@
-# WAVEFRAME 98 · GitHub PWA FIX3
+# WAVEFRAME 98 · GitHub PWA FIX4
 
-- 실패 진단된 별도 maskable 아이콘 경로를 manifest에서 제거했습니다.
-- 필수 일반 아이콘 192x192 및 512x512만 선언합니다.
-- 기존 편집기와 픽셀 UI는 유지합니다.
+FIX4는 이전 버전의 서비스 워커가 오래된 manifest/index를 캐시에서 반환할 수 있는 문제를 수정합니다.
 
-기존 저장소 최상위에서 manifest.webmanifest, index.html, service-worker.js, icons/를 덮어쓰세요. Pages 배포 후 Android Chrome에서 새로고침하고 설치를 확인하세요. 실제 기기 설치 성공은 Chrome에서 확인해야 합니다.
+## 반드시 교체할 파일
+- `index.html`
+- `manifest.webmanifest`
+- `service-worker.js`
+
+`icons/` 폴더는 기존 것을 유지합니다.
+
+## 적용 후
+1. GitHub Pages 배포 완료 대기
+2. Android Chrome에서 해당 사이트 열기
+3. 새로고침
+4. 앱 설치 버튼을 눌러 진단 확인
+
+FIX4 진단창은 실제 manifest URL도 표시합니다. 실제 설치 가능 여부는 배포 후 Chrome에서 최종 확인해야 합니다.

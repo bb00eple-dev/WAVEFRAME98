@@ -992,16 +992,16 @@ $('coverThumb').src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent('<svg
  addEventListener('beforeinstallprompt',e=>{e.preventDefault();pending=e;label('앱 설치');console.info('[WAVEFRAME PWA] install prompt ready')});
  addEventListener('appinstalled',()=>{pending=null;label('앱으로 사용 중',true)});
  async function diagnostics(){
-  let manifestOK=false,manifestError='',swReg=null,swError='';
-  try{const link=document.querySelector('link[rel="manifest"]');const r=await fetch(link.href,{cache:'no-store'});if(!r.ok)throw Error('manifest HTTP '+r.status);const m=await r.json();manifestOK=['name','short_name','id','start_url','scope','display','icons'].every(k=>!!m[k]);for(const i of m.icons||[]){const ir=await fetch(new URL(i.src,link.href),{cache:'no-store'});if(!ir.ok){manifestOK=false;manifestError='아이콘 로드 실패: '+i.src}}if(!manifestOK&&!manifestError)manifestError='필수 manifest 항목 누락'}catch(e){manifestError=String(e)}
+  let manifestOK=false,manifestError='',swReg=null,swError='',manifestURL='';
+  try{const link=document.querySelector('link[rel="manifest"]');manifestURL=link.href;const r=await fetch(link.href,{cache:'reload'});if(!r.ok)throw Error('manifest HTTP '+r.status);const m=await r.json();manifestOK=['name','short_name','id','start_url','scope','display','icons'].every(k=>!!m[k]);for(const i of m.icons||[]){const ir=await fetch(new URL(i.src,link.href),{cache:'no-store'});if(!ir.ok){manifestOK=false;manifestError='아이콘 로드 실패: '+i.src}}if(!manifestOK&&!manifestError)manifestError='필수 manifest 항목 누락'}catch(e){manifestError=String(e)}
   try{swReg=await navigator.serviceWorker.getRegistration('./')}catch(e){swError=String(e)}
   const swOK=!!swReg&&(!!swReg.active||!!swReg.waiting||!!swReg.installing);
-  return {secure:isSecureContext,manifestOK,manifestError,swOK,swError,scope:swReg?.scope||'',prompt:!!pending,standalone:standalone()};
+  return {secure:isSecureContext,manifestOK,manifestError,manifestURL,swOK,swError,scope:swReg?.scope||'',prompt:!!pending,standalone:standalone()};
  }
  btn?.addEventListener('click',async()=>{
   if(standalone()){label('앱으로 사용 중',true);return}
   if(pending){const e=pending;pending=null;try{await e.prompt();const c=await e.userChoice;label(c.outcome==='accepted'?'설치 요청됨':'앱 설치')}catch(err){alert('Chrome 설치창을 열지 못했습니다. Chrome 메뉴에서 설치를 확인해 주세요.')}return}
-  const d=await diagnostics();alert(['WAVEFRAME 98 설치 진단','',`HTTPS 보안 연결: ${d.secure?'정상':'실패'}`,`매니페스트와 아이콘: ${d.manifestOK?'정상':'확인 필요'}`,`서비스 워커 등록: ${d.swOK?'정상':'확인 필요'}`,`Chrome 설치 이벤트: ${d.prompt?'준비됨':'아직 전달되지 않음'}`,d.manifestError,d.swError,d.scope?`서비스 워커 범위: ${d.scope}`:'','Chrome이 설치 가능하다고 판단하기 전에는 사이트가 설치를 강제로 실행할 수 없습니다.'].filter(Boolean).join('\n'));
+  const d=await diagnostics();alert(['WAVEFRAME 98 설치 진단','',`HTTPS 보안 연결: ${d.secure?'정상':'실패'}`,`매니페스트와 아이콘: ${d.manifestOK?'정상':'확인 필요'}`,`서비스 워커 등록: ${d.swOK?'정상':'확인 필요'}`,`Chrome 설치 이벤트: ${d.prompt?'준비됨':'아직 전달되지 않음'}`,d.manifestError,d.manifestURL?`매니페스트 주소: ${d.manifestURL}`:'',d.swError,d.scope?`서비스 워커 범위: ${d.scope}`:'','Chrome이 설치 가능하다고 판단하기 전에는 사이트가 설치를 강제로 실행할 수 없습니다.'].filter(Boolean).join('\n'));
  });
  async function registerSW(){if(!('serviceWorker'in navigator)||!isSecureContext)return;try{const script=new URL('./service-worker.js',document.baseURI);const scope=new URL('./',document.baseURI);const reg=await navigator.serviceWorker.register(script.href,{scope:scope.pathname,updateViaCache:'none'});await reg.update().catch(()=>{});console.info('[WAVEFRAME PWA] SW scope:',reg.scope)}catch(e){console.error('[WAVEFRAME PWA] SW registration failed',e)}}
  if(document.readyState==='complete')registerSW();else addEventListener('load',registerSW,{once:true});
