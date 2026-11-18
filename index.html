@@ -983,7 +983,7 @@ $('coverThumb').src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent('<svg
 </script>
 
 <script>
-// PWA install support. The app can also be installed from Chrome's browser menu.
+// PWA install support: use Chrome's native prompt when eligible; otherwise explain the exact fallback.
 (() => {
   const installButton = document.getElementById('installAppBtn');
   let deferredInstallPrompt = null;
@@ -994,6 +994,19 @@ $('coverThumb').src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent('<svg
     installButton.setAttribute('aria-label', '앱으로 실행 중');
     installButton.disabled = true;
     installButton.title = 'WAVEFRAME 98이 앱으로 실행 중입니다.';
+  };
+  const explainInstall = async () => {
+    const secure = location.protocol === 'https:' || location.hostname === 'localhost';
+    let swReady = false;
+    try { swReady = 'serviceWorker' in navigator && !!(await navigator.serviceWorker.getRegistration('./')); } catch (_) {}
+    const reason = !secure
+      ? '현재 주소가 HTTPS가 아닙니다. GitHub Pages의 https:// 주소로 열어 주세요.'
+      : !('serviceWorker' in navigator)
+        ? '현재 브라우저가 서비스 워커를 지원하지 않습니다. Android Chrome 최신 버전으로 열어 주세요.'
+        : !swReady
+          ? '서비스 워커가 아직 준비되지 않았습니다. 페이지를 새로고침하고 잠시 기다린 뒤 다시 시도해 주세요.'
+          : 'Chrome이 아직 설치 조건을 충족했다고 판단하지 않았습니다. 페이지를 새로고침한 뒤에도 같으면 Chrome 메뉴에서 직접 설치해 주세요.';
+    alert('지금은 앱 설치 창을 열 수 없습니다.\n\n' + reason + '\n\n설치 방법\n1. Android Chrome에서 이 GitHub Pages 사이트를 엽니다.\n2. 오른쪽 위 ⋮ 메뉴를 누릅니다.\n3. “앱 설치” 또는 “홈 화면에 추가”를 선택합니다.\n\n참고: 브라우저가 설치 조건을 허용하기 전에는 웹페이지가 설치 창을 강제로 띄울 수 없습니다.');
   };
 
   if (isStandalone()) showInstalledState();
@@ -1010,18 +1023,18 @@ $('coverThumb').src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent('<svg
 
   installButton?.addEventListener('click', async () => {
     if (isStandalone()) return showInstalledState();
-    if (deferredInstallPrompt) {
-      deferredInstallPrompt.prompt();
-      try {
-        const choice = await deferredInstallPrompt.userChoice;
-        if (choice?.outcome === 'accepted') installButton.textContent = '설치 요청됨';
-      } catch (error) {
-        console.info('Install prompt result unavailable:', error);
-      }
-      deferredInstallPrompt = null;
-      return;
+    if (!deferredInstallPrompt) return explainInstall();
+    const promptEvent = deferredInstallPrompt;
+    deferredInstallPrompt = null;
+    try {
+      await promptEvent.prompt();
+      const choice = await promptEvent.userChoice;
+      if (choice?.outcome === 'accepted') installButton.textContent = '설치 요청됨';
+      else installButton.textContent = '앱 설치';
+    } catch (error) {
+      console.warn('Native install prompt failed:', error);
+      await explainInstall();
     }
-    alert('Chrome에서 설치하기\n\n1. 이 사이트를 Chrome으로 엽니다.\n2. 오른쪽 위 ⋮ 메뉴를 누릅니다.\n3. “앱 설치” 또는 “설치 및 바로가기 만들기”를 선택합니다.\n4. 설치를 확인합니다.\n\n메뉴에 설치 항목이 없다면 GitHub Pages 주소(https)를 사용 중인지 확인하고, 페이지를 한 번 새로고침해 주세요.');
   });
 
   window.addEventListener('appinstalled', showInstalledState);

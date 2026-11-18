@@ -1,5 +1,5 @@
 /* WAVEFRAME 98 PWA offline shell. All URLs are resolved relative to the GitHub Pages project path. */
-const CACHE_NAME = 'waveframe98-shell-v1';
+const CACHE_NAME = 'waveframe98-shell-v2';
 const APP_ROOT = new URL('./', self.registration.scope).href;
 const APP_SHELL = [
   APP_ROOT,
