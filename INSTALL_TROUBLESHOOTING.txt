@@ -1,7 +1,7 @@
-WAVEFRAME 98 PWA FIX2
+WAVEFRAME 98 설치 진단 FIX3
 
-GitHub 저장소 최상위에 index.html, manifest.webmanifest, service-worker.js, icons/ 폴더, screenshots/ 폴더를 모두 덮어써 주세요.
+이전 진단에서 ./icons/icon-512-maskable.png 파일을 불러오지 못했다고 표시했습니다. 별도 maskable 아이콘은 Chrome 설치의 필수 항목이 아니므로 manifest에서 참조를 제거했습니다. 필수 아이콘은 icon-192.png와 icon-512.png 두 개만 선언합니다.
 
-이번 수정: manifest id/start_url 명시, scope 정리, 서비스 워커 캐시 설치를 개별 처리해 일부 파일 실패로 SW 설치가 취소되지 않도록 변경, SW 캐시 버전 갱신, 앱 내부 설치 버튼에 진단 추가.
+GitHub 저장소 최상위에서 manifest.webmanifest, index.html, service-worker.js, icons 폴더를 덮어써 주세요. 아이콘을 새로 추가할 필요는 없습니다.
 
-배포 후 Android Chrome에서 Pages HTTPS 주소를 열고 새로고침한 뒤 앱 설치 버튼을 눌러 진단 결과를 확인하세요. 설치 가능 여부는 실제 Chrome이 판단하며 코드가 강제할 수 없습니다.
+Pages 배포 완료 후 Chrome에서 사이트를 새로고침하고 앱 설치 버튼으로 다시 진단하세요.

@@ -1,9 +1,7 @@
-# WAVEFRAME 98 GitHub Pages PWA FIX2
+# WAVEFRAME 98 · GitHub PWA FIX3
 
-기존 V5.1 Pixel 편집기를 유지한 설치 진단 보완판입니다.
+- 실패 진단된 별도 maskable 아이콘 경로를 manifest에서 제거했습니다.
+- 필수 일반 아이콘 192x192 및 512x512만 선언합니다.
+- 기존 편집기와 픽셀 UI는 유지합니다.
 
-기존 GitHub 저장소 최상위에 `index.html`, `manifest.webmanifest`, `service-worker.js`, `icons/`, `screenshots/`를 모두 덮어써 주세요. 일부 파일만 교체하면 이전 서비스 워커/매니페스트가 남을 수 있습니다.
-
-Settings → Pages → Deploy from a branch → `main` / `/(root)` 설정 후 HTTPS 주소를 Android Chrome으로 여세요. 새로고침한 뒤 앱 내부 `앱 설치` 버튼을 누르면 HTTPS, 매니페스트/아이콘, 서비스 워커 상태를 진단합니다.
-
-설치 성공은 실제 배포 주소와 Android Chrome에서 최종 확인해야 합니다.
+기존 저장소 최상위에서 manifest.webmanifest, index.html, service-worker.js, icons/를 덮어쓰세요. Pages 배포 후 Android Chrome에서 새로고침하고 설치를 확인하세요. 실제 기기 설치 성공은 Chrome에서 확인해야 합니다.
