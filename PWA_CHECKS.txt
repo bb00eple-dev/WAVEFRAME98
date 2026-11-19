@@ -1,6 +1,7 @@
-WAVEFRAME 98 PWA 파일 체크
-- index.html에 manifest 링크 및 service worker 등록 코드 포함
+WAVEFRAME 98 FIX7 PWA 파일 체크
+- index.html manifest 링크와 service-worker-fix7.js 등록 코드 포함
 - manifest.webmanifest에 start_url, scope, display=standalone, 192/512 아이콘 포함
-- service-worker.js에서 앱 셸 설치 캐시 및 오프라인 탐색 fallback 구성
-- GitHub Pages 프로젝트 경로에 대응하도록 URL을 service worker scope 기준 상대 경로로 구성
-- 파일 기반(file://) 직접 실행에서는 service worker가 활성화되지 않음. GitHub Pages HTTPS 주소에서 사용
+- FIX7 서비스 워커에서 앱 셸 캐시 및 오프라인 탐색 fallback 구성
+- GitHub Pages 프로젝트 경로를 service worker scope 기준 상대 경로로 구성
+- 필수 아이콘 icon-192.png와 icon-512.png는 index.html과 같은 저장소 최상위에 위치
+- service worker는 HTTPS 배포 환경에서 등록되며 file:// 직접 실행에서는 활성화되지 않음

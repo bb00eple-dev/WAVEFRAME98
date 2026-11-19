@@ -1,3 +1,7 @@
-FIX6: 필수 아이콘 파일을 저장소 최상위로 이동했습니다.
-반드시 GitHub 저장소 최상위에 icon-192.png와 icon-512.png 두 파일을 추가하세요. index.html, manifest.webmanifest를 교체하고 service-worker-fix6.js를 새로 추가합니다.
-아이콘 폴더 내부에만 파일을 두면 안 됩니다. index.html과 같은 위치에 있어야 합니다.
+WAVEFRAME 98 FIX7 설치 참고
+- FIX7은 기존 FIX6의 루트 아이콘 구조를 유지합니다.
+- index.html, manifest.webmanifest, service-worker-fix7.js 및 루트 아이콘 2개를 함께 배포해야 합니다.
+- icons 폴더 안의 파일만으로는 대체하지 말고 icon-192.png와 icon-512.png를 index.html과 같은 위치에 둡니다.
+- GitHub Pages HTTPS 주소를 Chrome에서 열어 사용합니다.
+- 이전 FIX6 설치본은 새 index.html이 로드되고 FIX7 서비스 워커가 활성화되면 업데이트됩니다.
+- 브라우저 사이트 데이터를 삭제하지 않아도 됩니다. 앱 내 IndexedDB 프로젝트 보관함은 사이트 저장공간을 삭제하면 사라질 수 있습니다.
