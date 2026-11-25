@@ -5,18 +5,21 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#a88bdc">
 <meta name="description" content="WAVEFRAME 98 Pixel Music Video Workstation">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; script-src 'sha256-T7I9snYtEQzW+8vRRoDXmyFMFrZ2Pf9N5up3N6wOOBM=' 'sha256-3SiPYzswSb3p7754N3Or2ajiXTzi9ZcSTRBK+eRJsNI='; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' blob:; connect-src 'self'; frame-src 'self'; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests">
+
 <meta name="application-name" content="WAVEFRAME 98">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="WAVEFRAME 98">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="manifest" href="./manifest.webmanifest?v=fix7">
-<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
-<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<link rel="manifest" href="./manifest.webmanifest?v=fix9">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css">
+<!-- FIX9: no remote font stylesheet; use locally available system fonts. -->
 
-<title>WAVEFRAME 98 · Music Video Workstation 5.1 Pixel</title>
+<title>WAVEFRAME 98 · Music Video Workstation 5.2 Pixel</title>
 <style>
 :root{--desk:#12616b;--chrome:#c7c7c7;--chrome2:#d7d7d7;--ink:#171717;--muted:#5e6267;--blue:#153b70;--blue2:#2f67a6;--line:#7a7a7a;--white:#fff;--mint:#79d6c1;--accent:#234e8b;--panel:#e4e4e4;--shadow:#343434;--font:Tahoma,"Malgun Gothic",sans-serif}
 *{box-sizing:border-box}html,body{height:100%}body{margin:0;background:radial-gradient(ellipse at 16% 10%,#2a8290 0,#12616b 40%,#0c4c56 100%);color:var(--ink);font:13px var(--font);overflow:auto}
@@ -283,13 +286,16 @@ body{font-size:13px}
 .sticker-row.active{background:#f2e7fa;border-color:#a98ac5}.sticker-row img{width:34px;height:34px;object-fit:contain;background:#f3edf6;border:1px solid #e2d5e8}.sticker-row button{background:transparent;border:0;color:#6c557d;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;text-align:left}
 .sticker-row small{color:#a18eab}.lyric-sort-field{margin:6px 0 8px}.stage-sticker-hint{font-size:9px;color:#a08baa}
 @media(max-width:650px){.library-modal{align-items:flex-end}.library-modal .dialog{max-height:88dvh;overflow-y:auto}.library-card{grid-template-columns:1fr}.library-card-actions{justify-content:flex-start}.library-card-actions button{min-height:34px;font-size:10px}}
-</style>
+
+.converter-dialog{width:min(520px,calc(100vw - 24px));max-height:calc(100vh - 28px);overflow:auto}.converter-body{padding:14px}.converter-lead{padding:9px 10px;background:#e9edf4;border:1px solid #9caac0;margin-bottom:12px;color:#24344e}.converter-lead b{font-size:12px}.converter-lead p{font-size:10px;line-height:1.55;margin:5px 0 0;color:#4b5665}.converter-file-label{min-height:56px;margin:0}.converter-file-label input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.converter-format-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.converter-format-card{display:flex;gap:8px;align-items:flex-start;padding:10px;background:#ededed;border:1px solid #aaa;cursor:pointer;min-height:66px}.converter-format-card:has(input:checked){background:#e3edf9;border-color:#496a9a;box-shadow:inset 0 0 0 1px #8ca9d1}.converter-format-card input{margin:2px 0 0;accent-color:#365d91}.converter-format-card span{display:flex;flex-direction:column;gap:4px}.converter-format-card b{font-size:11px}.converter-format-card small{font-size:9px;line-height:1.4;color:#5b6068}.converter-name-row{display:flex;align-items:center;gap:7px}.converter-name-row input{flex:1;min-width:0}.converter-name-row span{font:12px Consolas,monospace;color:#4c5561;min-width:38px}.converter-notice{display:flex;flex-direction:column;gap:4px;padding:9px;background:#f5f2e9;border:1px solid #c9b98c;font-size:9px;line-height:1.5;color:#554c36}.converter-notice b{font-size:10px}.converter-progress{height:9px;background:#262c35;border:1px solid #777;margin-top:13px;overflow:hidden}.converter-progress>div{height:100%;width:0;background:linear-gradient(90deg,#80cdbb,#8faee1);transition:width .12s linear}.converter-status-row{display:flex;justify-content:space-between;gap:10px;margin-top:6px;font-size:10px;color:#41464d;min-height:16px}.converter-status-row span{overflow-wrap:anywhere}.converter-actions{margin-top:13px}.converter-actions button:disabled{opacity:.45;cursor:not-allowed}.converter-file-label:focus-within{outline:2px solid #3769a5;outline-offset:2px}
+@media(max-width:560px){.converter-format-grid{grid-template-columns:1fr}.converter-dialog{width:calc(100vw - 16px)}.converter-body{padding:10px}}
+.engine-consent{display:flex;align-items:flex-start;gap:8px;padding:8px 9px;margin:8px 0;background:#fff8df;border:1px solid #b7a66b;color:#373125;font-size:10px;line-height:1.55}.engine-consent input{flex:none;margin:2px 0 0;accent-color:#234e8b}.engine-consent b{display:block;margin-bottom:2px}</style>
 </head>
 <body>
 <div class="desktop">
 <div class="window" data-work-view="scene">
  <div class="titlebar"><div class="title-left"><span class="app-icon">♫</span><span>WAVEFRAME 98 — Music Video Workstation</span></div><div class="win-controls"><button title="최소화">_</button><button title="최대화">□</button><button title="닫기">×</button></div></div>
- <nav class="menubar"><button class="menu-btn" id="menuFile">파일(F)</button><button class="menu-btn" id="menuEdit">편집(E)</button><button class="menu-btn" id="menuView">보기(V)</button><button class="menu-btn" id="menuHelp">도움말(H)</button><button class="menu-btn" id="installAppBtn" type="button" aria-label="WAVEFRAME 98 앱 설치">앱 설치</button><span class="menu-right">WAVEFRAME 98  ·  BUILD 5.3 PIXEL PWA</span></nav>
+ <nav class="menubar"><button class="menu-btn" id="menuFile">파일(F)</button><button class="menu-btn" id="menuEdit">편집(E)</button><button class="menu-btn" id="menuView">보기(V)</button><button class="menu-btn" id="menuTools" type="button">도구함(T)</button><button class="menu-btn" id="menuHelp">도움말(H)</button><button class="menu-btn" id="installAppBtn" type="button" aria-label="WAVEFRAME 98 앱 설치">앱 설치</button><span class="menu-right">WAVEFRAME 98  ·  BUILD 5.4 PIXEL PWA</span></nav>
  <div class="toolbar">
   <button class="toolbtn primary" id="openAudioTop">♫ 음악 열기</button><button class="toolbtn" id="openCoverTop">▧ 앨범 커버</button><button class="toolbtn" id="saveProject">앱에 저장</button><button class="toolbtn" id="openLibraryTop">보관함</button><span class="toolsep"></span>
   <button class="toolbtn" id="undoBtn" title="현재 재생 위치 처음으로">↶ 처음</button><button class="toolbtn" id="previewPlay">▶ 미리듣기</button><button class="toolbtn" id="previewModeBtn" aria-pressed="false">미리보기 모드</button><button class="toolbtn primary" id="openLyricStudioTop">가사 편집 ↗</button><span class="spacer"></span><span class="project-name" id="projectName">새 프로젝트 · Untitled</span><span class="save-status" id="saveStatus">자동저장 준비</span><span class="toolsep"></span><button class="toolbtn primary" id="exportTop">영상 내보내기 ↗</button>
@@ -307,7 +313,7 @@ body{font-size:13px}
     <div class="section-label">미디어 가져오기</div>
     <div class="upload-row">
      <label class="upload" for="audioFile"><span class="glyph">♫</span><span><b>음악 파일</b><small id="audioMeta">MP3 · WAV · M4A · MP4</small></span><input id="audioFile" type="file" accept="audio/*,video/mp4,.mp4,.m4a,.m4v"></label>
-     <label class="upload" for="coverFile"><span class="glyph">▧</span><span><b>앨범 커버</b><small id="coverMeta">JPG · PNG</small></span><input id="coverFile" type="file" accept="image/*"></label>
+     <label class="upload" for="coverFile"><span class="glyph">▧</span><span><b>앨범 커버</b><small id="coverMeta">JPG · PNG</small></span><input id="coverFile" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp"></label>
     </div>
     <div class="media-card"><img class="cover-thumb" id="coverThumb" alt="앨범 커버 미리보기" src=""><div class="media-info"><b id="mediaTitle">No artwork loaded</b><small id="mediaArtist">앨범 커버를 불러오세요</small><small id="mediaFile">오디오 파일 대기 중</small></div></div>
     <div class="field"><label for="trackTitle">곡 제목</label><input class="text-input" id="trackTitle" value="Midnight Echoes" maxlength="80"></div>
@@ -332,7 +338,7 @@ body{font-size:13px}
     <div class="two-col"><button class="small-btn" id="designPresetDuplicate">복제</button><button class="small-btn" id="designPresetDelete">삭제</button></div>
     <div class="hint">디자인 프리셋은 배치, 색상, 글꼴, 가사 효과, 앨범 효과와 비주얼라이저 설정만 저장합니다. 음악과 가사 타이밍은 포함하지 않습니다.</div>
     <div class="section-label" style="margin-top:14px">배경 이미지</div>
-    <label class="upload" for="bgFile" style="min-height:39px"><span class="glyph">▧</span><span><b>별도 배경 이미지 추가</b><small id="bgMeta">선택하지 않으면 앨범 커버 사용 가능</small></span><input id="bgFile" type="file" accept="image/*"></label>
+    <label class="upload" for="bgFile" style="min-height:39px"><span class="glyph">▧</span><span><b>별도 배경 이미지 추가</b><small id="bgMeta">선택하지 않으면 앨범 커버 사용 가능</small></span><input id="bgFile" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp"></label>
     <div class="field"><label for="fontFile">사용자 폰트 파일</label><label class="upload" for="fontFile" style="min-height:37px;margin:0"><span class="glyph" style="font-size:16px">Aa</span><span><b>폰트 불러오기</b><small id="fontMeta">TTF · OTF · WOFF2</small></span><input id="fontFile" type="file" accept=".ttf,.otf,.woff,.woff2,font/ttf,font/otf,font/woff,font/woff2"></label></div>
    </div>
   </aside>
@@ -483,7 +489,7 @@ body{font-size:13px}
     <div class="tab-page" id="tab-stickers">
      <div class="subhead">사진 스티커 추가</div>
      <button class="small-btn primary" id="addStickerBtn" type="button">＋ 사진 불러오기</button>
-     <input id="stickerFile" type="file" accept="image/*" multiple hidden>
+     <input id="stickerFile" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" multiple hidden>
      <div class="hint">사진과 투명 PNG를 스티커처럼 올릴 수 있어요. 미리보기에서 드래그해 위치를 정하고 아래에서 크기와 회전을 조절하세요.</div>
      <div class="subhead">현재 스티커</div>
      <div id="stickerList" class="sticker-list"><div class="sticker-empty">아직 추가한 스티커가 없습니다.</div></div>
@@ -517,8 +523,9 @@ body{font-size:13px}
 </div>
 </div>
 
-<div class="export-modal library-modal" id="projectLibraryModal" aria-hidden="true"><div class="dialog"><div class="titlebar"><div class="title-left"><span class="app-icon">▣</span><span>WAVEFRAME 98 · 프로젝트 보관함</span></div><div class="win-controls"><button id="closeLibrary" type="button">×</button></div></div><div class="dialog-body"><p class="library-intro">프로젝트와 미디어는 이 브라우저의 앱 저장소에 보관됩니다. 별도 파일로 저장할 필요 없이 언제든 이어서 편집할 수 있어요.</p><div class="library-actions"><button class="small-btn primary" id="newProjectBtn" type="button">＋ 새 프로젝트</button><button class="small-btn" id="saveToLibraryBtn" type="button">현재 작업 저장</button></div><div class="library-storage" id="libraryStorageStatus">저장소 확인 중…</div><div class="library-list" id="projectLibraryList"><div class="sticker-empty">저장된 프로젝트를 불러오는 중…</div></div><div class="dialog-actions"><button class="small-btn" id="closeLibraryBottom" type="button">닫기</button></div></div></div></div>
+<div class="export-modal library-modal" id="projectLibraryModal" aria-hidden="true"><div class="dialog"><div class="titlebar"><div class="title-left"><span class="app-icon">▣</span><span>WAVEFRAME 98 · 프로젝트 보관함</span></div><div class="win-controls"><button id="closeLibrary" type="button">×</button></div></div><div class="dialog-body"><p class="library-intro">프로젝트와 미디어는 이 브라우저의 앱 저장소에 보관됩니다. 외부 클라우드 동기화는 하지 않습니다. 기기·브라우저 데이터 삭제 시 사라질 수 있으며, 로컬 저장 데이터 자체는 암호화되지 않습니다.</p><div class="library-actions"><button class="small-btn primary" id="newProjectBtn" type="button">＋ 새 프로젝트</button><button class="small-btn" id="saveToLibraryBtn" type="button">현재 작업 저장</button></div><div class="library-storage" id="libraryStorageStatus">저장소 확인 중…</div><div class="library-list" id="projectLibraryList"><div class="sticker-empty">저장된 프로젝트를 불러오는 중…</div></div><div class="dialog-actions"><button class="small-btn" id="closeLibraryBottom" type="button">닫기</button></div></div></div></div>
 <div class="export-modal" id="exportModal"><div class="dialog"><div class="titlebar"><div class="title-left"><span class="app-icon">⇧</span><span>영상 렌더링 / EXPORT QUEUE</span></div><div class="win-controls"><button id="closeExport">×</button></div></div><div class="dialog-body"><b>전체 음악 길이로 렌더링</b><p style="font-size:10px;color:#555;line-height:1.5;margin:6px 0 10px">음악 전체 길이(약 3분 이상 포함)를 처음부터 끝까지 실시간 녹화합니다. 기기에서 지원하는 형식으로 저장하며, 내보내는 동안 브라우저를 닫거나 앱을 전환하지 마세요.</p><div class="field"><label for="exportFormat">파일 형식</label><select class="select" id="exportFormat"><option value="auto">브라우저 권장 형식</option><option value="mp4">MP4 (지원 시)</option><option value="webm">WebM</option></select><div class="hint" id="exportFormatHint">브라우저에 따라 MP4 또는 WebM으로 저장됩니다.</div></div><div class="two-col"><div class="field"><label for="exportSize">출력 해상도</label><select class="select" id="exportSize"><option value="1280">HD · 1280 × 720</option><option value="1920" selected>Full HD · 1920 × 1080</option><option value="2560">QHD · 2560 × 1440</option><option value="3840">4K · 3840 × 2160</option></select></div><div class="field"><label for="exportFps">프레임</label><select class="select" id="exportFps"><option value="30" selected>30 FPS</option><option value="60">60 FPS</option></select></div></div><label style="display:flex;gap:7px;align-items:center;font-size:10px;margin-top:8px"><input id="alphaExport" type="checkbox"> 투명 배경 WebM (VP9 알파 지원 시)</label><div class="notice">Chrome 계열은 보통 WebM, Safari 계열은 지원 상태에 따라 MP4 또는 WebM으로 저장됩니다. 투명 채널은 VP9 알파를 지원하는 브라우저에서만 시도할 수 있습니다. 긴 영상·4K·60fps는 모바일 기기의 메모리와 발열에 영향을 받을 수 있습니다.</div><div class="export-progress"><div id="exportProgress"></div></div><div style="display:flex;justify-content:space-between;font-size:10px"><span id="exportStatus">준비 완료</span><span id="exportPercent">0%</span></div><div class="dialog-actions"><button class="small-btn" id="cancelExport">닫기</button><button class="small-btn primary" id="startExport" style="margin-left:6px">전체 영상 렌더링 시작</button></div></div></div></div>
+<div class="export-modal" id="audioExtractModal" aria-hidden="true"><div class="dialog converter-dialog"><div class="titlebar"><div class="title-left"><span class="app-icon">♫</span><span>WAVEFRAME 98 · 도구함 / MP4 오디오 추출</span></div><div class="win-controls"><button id="closeAudioExtract" type="button" aria-label="닫기">×</button></div></div><div class="dialog-body converter-body"><div class="converter-lead"><b>영상은 그대로 두고, 소리만 저장해요.</b><p>MP4에서 오디오 트랙 전체를 추출합니다. MP4·오디오 파일은 이 기기에서만 처리하며 서버로 업로드하지 않습니다. 변환 프로그램만 최초 1회 다운로드합니다.</p></div><div class="field"><label for="converterFileInput">원본 MP4 선택</label><label class="upload converter-file-label" for="converterFileInput"><span class="glyph">▣</span><span><b id="converterFileTitle">영상 파일 선택</b><small id="converterFileMeta">MP4 · M4V</small></span><input id="converterFileInput" type="file" accept="video/mp4,.mp4,.m4v"></label></div><div class="field"><label>저장 형식</label><div class="converter-format-grid"><label class="converter-format-card"><input type="radio" name="converterFormat" value="mp3" checked><span><b>MP3 · 320kbps</b><small>320kbps CBR · 손실 재인코딩 · 원본 보존은 M4A 권장</small></span></label><label class="converter-format-card"><input type="radio" name="converterFormat" value="m4a"><span><b>M4A · AAC 원본 추출</b><small>재인코딩 없이 오디오 샘플 그대로 보존</small></span></label></div></div><div class="field"><label for="converterFileName">저장할 파일 이름</label><div class="converter-name-row"><input class="text-input" id="converterFileName" maxlength="80" value="My Music" placeholder="파일 이름"><span id="converterExtension">.mp3</span></div></div><label class="engine-consent"><input type="checkbox" id="allowEngineDownload"><span><b>첫 변환 도구 다운로드 허용 (선택)</b>변환 엔진이 이 기기에 없을 때만 CDN에서 프로그램 파일을 내려받습니다. 이때 CDN은 접속 IP·요청 시각·라이브러리 주소를 볼 수 있지만, MP4·음악·사진·가사·프로젝트 내용은 전송하지 않습니다. 허용하지 않으면 이미 저장된 엔진만 사용하고 인터넷 요청은 하지 않습니다.</span></label><div class="converter-notice"><b>기기 내 변환</b><span>MP3는 손실 재인코딩이라 원본 AAC의 음질 정보를 복원하지 못합니다. 원본 오디오 샘플 보존이 가장 중요하면 M4A를 선택하세요. 변환은 네트워크 연결이 차단된 격리 Worker에서 실행합니다. 엔진을 이 브라우저에 저장한 뒤에는 오프라인에서도 사용할 수 있습니다.</span></div><div class="converter-progress"><div id="converterProgressBar"></div></div><div class="converter-status-row"><span id="converterStatus">MP4 파일을 선택해 주세요.</span><b id="converterPercent">0%</b></div><div class="dialog-actions converter-actions"><button class="small-btn" id="cancelAudioExtract" type="button">닫기</button><button class="small-btn primary" id="startAudioExtract" type="button" disabled>변환 및 저장</button></div></div></div></div>
 <audio id="audio" preload="metadata"></audio>
 <script>
 (()=>{'use strict';
@@ -851,6 +858,150 @@ function applyLayout(name){
  history=[];updatePositionLabels();
 }
 function setAspect(r){$('aspectRatio').value=r;resizeStage()}
+const CONVERTER_ENGINES={
+ lame:{id:'converter-lamejs-1.2.1',url:'https://cdnjs.cloudflare.com/ajax/libs/lamejs/1.2.1/lame.all.min.js',type:'text/javascript'},
+ mp4box:{id:'converter-mp4box-2.6.0',url:'https://cdn.jsdelivr.net/npm/mp4box@2.6.0/dist/mp4box.all.js',type:'text/javascript'}
+};
+let converterBusy=false,converterSourceFile=null,converterAbortRequested=false;
+function setConverterProgress(message,percent){$('converterStatus').textContent=message;$('converterPercent').textContent=Math.round(clamp(percent||0,0,100))+'%';$('converterProgressBar').style.width=clamp(percent||0,0,100)+'%'}
+function converterFileBase(name){return String(name||'My Music').replace(/\.[^.]+$/,'').replace(/[\\/:*?"<>|]/g,'_').trim().slice(0,72)||'My Music'}
+function selectedConverterFormat(){return document.querySelector('input[name="converterFormat"]:checked')?.value||'mp3'}
+function updateConverterExtension(){const ext=selectedConverterFormat()==='m4a'?'.m4a':'.mp3';$('converterExtension').textContent=ext}
+async function loadConverterEngineBlobs(format){
+ const keys=format==='m4a'?['mp4box']:['mp4box','lame'];
+ const out={};
+ for(const key of keys)out[key]=await getConverterEngineBlob(key);
+ return out;
+}
+let converterSandboxFrame=null,converterSandboxReady=false,converterSandboxWaiters=[],converterCurrentJobId=0,converterJobResolve=null,converterJobReject=null,converterJobFileName='',converterJobFormat='';
+let libraryDownloaderFrame=null,libraryDownloaderReady=false,libraryDownloaderWaiters=[],libraryDownloadId=0,libraryDownloadPending=null;
+function ensureConverterSandbox(){
+ if(converterSandboxReady&&converterSandboxFrame)return Promise.resolve(converterSandboxFrame);
+ return new Promise((resolve,reject)=>{
+  let done=false;const timer=setTimeout(()=>{if(done)return;done=true;reject(new Error('격리된 변환 공간을 시작하지 못했습니다. 앱을 다시 열어 주세요.'))},15000);
+  const finish=err=>{if(done)return;done=true;clearTimeout(timer);if(err)reject(err);else resolve(converterSandboxFrame)};
+  converterSandboxWaiters.push(finish);
+  if(!converterSandboxFrame){
+   const frame=document.createElement('iframe');frame.id='converterSandboxFrame';frame.title='격리된 오디오 변환 공간';frame.setAttribute('sandbox','allow-scripts');frame.setAttribute('aria-hidden','true');frame.setAttribute('tabindex','-1');frame.referrerPolicy='no-referrer';frame.style.cssText='position:fixed;width:1px;height:1px;left:-10px;top:-10px;opacity:0;pointer-events:none;border:0';
+   frame.addEventListener('load',()=>{try{frame.contentWindow.postMessage({type:'ping'},'*')}catch(e){converterSandboxWaiters.splice(0).forEach(fn=>fn(e))}},{once:true});
+   converterSandboxFrame=frame;document.body.append(frame);frame.src='./converter-sandbox.html?v=fix9';
+  }else{
+   try{converterSandboxFrame.contentWindow.postMessage({type:'ping'},'*')}catch(e){finish(e)}
+  }
+ });
+}
+function ensureLibraryDownloader(){
+ if(libraryDownloaderReady&&libraryDownloaderFrame)return Promise.resolve(libraryDownloaderFrame);
+ return new Promise((resolve,reject)=>{
+  let done=false;const timer=setTimeout(()=>{if(done)return;done=true;reject(new Error('격리된 라이브러리 다운로드 공간을 시작하지 못했습니다.'))},15000);
+  const finish=err=>{if(done)return;done=true;clearTimeout(timer);if(err)reject(err);else resolve(libraryDownloaderFrame)};
+  libraryDownloaderWaiters.push(finish);
+  if(!libraryDownloaderFrame){
+   const frame=document.createElement('iframe');frame.id='libraryDownloaderFrame';frame.title='격리된 변환 도구 다운로드 공간';frame.setAttribute('sandbox','allow-scripts');frame.setAttribute('aria-hidden','true');frame.setAttribute('tabindex','-1');frame.referrerPolicy='no-referrer';frame.style.cssText='position:fixed;width:1px;height:1px;left:-10px;top:-10px;opacity:0;pointer-events:none;border:0';
+   frame.addEventListener('load',()=>{try{frame.contentWindow.postMessage({type:'ping'},'*')}catch(e){libraryDownloaderWaiters.splice(0).forEach(fn=>fn(e))}},{once:true});
+   libraryDownloaderFrame=frame;document.body.append(frame);frame.src='./library-downloader.html?v=fix9';
+  }else{try{libraryDownloaderFrame.contentWindow.postMessage({type:'ping'},'*')}catch(e){finish(e)}}
+ });
+}
+window.addEventListener('message',event=>{
+ const frame=libraryDownloaderFrame;
+ if(!frame||event.source!==frame.contentWindow||event.origin!=='null')return;
+ const msg=event.data;if(!msg||typeof msg!=='object')return;
+ if(msg.type==='ready'){libraryDownloaderReady=true;libraryDownloaderWaiters.splice(0).forEach(fn=>fn());return;}
+ const pending=libraryDownloadPending;if(!pending||msg.id!==pending.id)return;
+ if(msg.type==='progress'){ $('converterStatus').textContent=String(msg.message||'변환 도구 다운로드 중…').slice(0,180);return; }
+ if(msg.type==='downloaded'){
+  if(msg.engineKey!==pending.engineKey||!(msg.blob instanceof Blob)||msg.blob.size<1000||msg.blob.size>3*1024*1024){libraryDownloadPending=null;pending.reject(new Error('다운로드된 변환 도구 파일을 확인하지 못했습니다.'));return;}
+  libraryDownloadPending=null;pending.resolve(msg.blob);return;
+ }
+ if(msg.type==='error'){libraryDownloadPending=null;pending.reject(new Error(String(msg.message||'변환 도구 다운로드 실패').slice(0,300)));}
+});
+async function requestLibraryDownload(engineKey){
+ const frame=await ensureLibraryDownloader();
+ return new Promise((resolve,reject)=>{
+  if(libraryDownloadPending){reject(new Error('이미 변환 도구를 내려받고 있습니다.'));return;}
+  const id=++libraryDownloadId;const timer=setTimeout(()=>{if(libraryDownloadPending?.id===id){libraryDownloadPending=null;reject(new Error('변환 도구 다운로드 시간이 초과되었습니다.'));}},45000);
+  libraryDownloadPending={id,engineKey,resolve:blob=>{clearTimeout(timer);resolve(blob)},reject:error=>{clearTimeout(timer);reject(error)}};
+  try{frame.contentWindow.postMessage({type:'download',id,engineKey},'*')}catch(error){clearTimeout(timer);libraryDownloadPending=null;reject(new Error('격리된 다운로드 공간에 요청을 전달하지 못했습니다.'))}
+ });
+}
+window.addEventListener('message',event=>{
+ const frame=converterSandboxFrame;
+ if(!frame||event.source!==frame.contentWindow||event.origin!=='null')return;
+ const msg=event.data;
+ if(!msg||typeof msg!=='object')return;
+ if(msg.type==='ready'){
+  converterSandboxReady=true;const waiters=converterSandboxWaiters.splice(0);waiters.forEach(fn=>fn());return;
+ }
+ if(msg.id!==converterCurrentJobId)return;
+ if(msg.type==='progress'){
+  const text=String(msg.message||'변환 중…').slice(0,180);setConverterProgress(text,Number(msg.percent)||0);return;
+ }
+ if(msg.type==='done'){
+  const expected=converterJobFormat==='m4a'?'audio/mp4':'audio/mpeg';
+  const blob=msg.blob;
+  if(!(blob instanceof Blob)||blob.size<1000||blob.size>500*1024*1024||!String(blob.type||'').toLowerCase().startsWith(expected)){
+   converterJobReject?.(new Error('변환 결과 파일을 안전하게 확인하지 못했습니다.'));converterJobResolve=converterJobReject=null;return;
+  }
+  downloadBlob(blob,converterJobFileName);setConverterProgress(converterJobFormat==='m4a'?'완료 · AAC 원본을 재인코딩 없이 추출했어요.':'완료 · MP3 320kbps 파일을 저장했어요.',100);
+  converterJobResolve?.();converterJobResolve=converterJobReject=null;return;
+ }
+ if(msg.type==='error'){
+  const message=String(msg.message||'오디오 변환에 실패했습니다.').slice(0,400);
+  converterJobReject?.(new Error(message));converterJobResolve=converterJobReject=null;return;
+ }
+ if(msg.type==='cancelled'){
+  converterJobReject?.(new Error('사용자가 변환을 취소했습니다.'));converterJobResolve=converterJobReject=null;
+ }
+});
+async function getConverterEngineBlob(engineKey){
+ const def=CONVERTER_ENGINES[engineKey];if(!def)throw new Error('변환 엔진 설정을 찾지 못했습니다.');
+ let rec=await idbLibraryRequest('readonly',store=>store.get(def.id));
+ if(rec?.blob&&rec.blob.size>1000&&rec.blob.size<3*1024*1024&&rec.source===def.url){
+  const digest=await sha256Blob(rec.blob);
+  if(rec.sha256&&rec.sha256===digest)return rec.blob;
+  if(!rec.sha256){await idbLibraryRequest('readwrite',store=>store.put({...rec,sha256:digest,cacheDigestAt:new Date().toISOString()}));return rec.blob;}
+ }
+ $('converterStatus').textContent=engineKey==='lame'?'MP3 인코더를 처음 받아 기기에 저장하는 중…':'MP4 오디오 추출 엔진을 처음 받아 기기에 저장하는 중…';
+ if(!$('allowEngineDownload')?.checked)throw new Error('이 변환 도구는 아직 기기에 저장되지 않았어요. 파일은 전송하지 않지만 CDN에 접속 IP와 요청 시각이 전달될 수 있어요. 위의 첫 변환 도구 다운로드 허용을 직접 선택한 뒤 다시 시도해 주세요.');
+ let blob;
+ try{blob=await requestLibraryDownload(engineKey)}
+ catch(error){throw new Error(String(error?.message||'변환 도구 다운로드 실패').slice(0,300))}
+ const digest=await sha256Blob(blob);
+ await idbLibraryRequest('readwrite',store=>store.put({id:def.id,blob,source:def.url,version:def.id,sha256:digest,savedAt:new Date().toISOString()}));
+ return blob;
+}
+async function sha256Blob(blob){
+ if(!crypto?.subtle)throw new Error('이 브라우저에서는 로컬 파일 무결성 확인을 지원하지 않습니다. HTTPS 연결에서 다시 열어 주세요.');
+ const hash=await crypto.subtle.digest('SHA-256',await blob.arrayBuffer());
+ return Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,'0')).join('');
+}
+function openAudioExtract(){converterSourceFile=null;$('converterFileInput').value='';$('converterFileTitle').textContent='영상 파일 선택';$('converterFileMeta').textContent='MP4 · M4V';$('converterFileName').value='My Music';$('allowEngineDownload').checked=false;$('startAudioExtract').disabled=true;setConverterProgress('MP4 파일을 선택해 주세요.',0);updateConverterExtension();$('audioExtractModal').classList.add('open');$('audioExtractModal').setAttribute('aria-hidden','false')}
+function closeAudioExtract(){if(converterBusy){converterAbortRequested=true;try{converterSandboxFrame?.contentWindow.postMessage({type:'cancel',id:converterCurrentJobId},'*')}catch(_){}setConverterProgress('취소 요청 중…',0);return}converterSourceFile=null;$('converterFileInput').value='';$('startAudioExtract').disabled=true;$('audioExtractModal').classList.remove('open');$('audioExtractModal').setAttribute('aria-hidden','true')}
+async function runAudioExtract(){
+ if(converterBusy)return;
+ const file=converterSourceFile;if(!file){toast('먼저 MP4 파일을 선택해 주세요.');return}
+ if(!/^video\/mp4$|\.mp4$|\.m4v$/i.test(file.type+' '+file.name)){toast('MP4 또는 M4V 파일을 선택해 주세요.');return}
+ const format=selectedConverterFormat(),base=converterFileBase($('converterFileName').value),extension=format==='m4a'?'.m4a':'.mp3';
+ converterBusy=true;converterAbortRequested=false;$('startAudioExtract').disabled=true;$('startAudioExtract').textContent='변환 중…';$('cancelAudioExtract').textContent='취소';
+ try{
+  if(file.size>200*1024*1024)throw new Error('모바일 기기의 메모리 사용량을 고려해 현재는 200MB 이하의 MP4를 지원합니다.');
+  if(file.size<16)throw new Error('파일이 너무 작거나 올바른 MP4가 아닙니다.');
+  setConverterProgress('변환 엔진을 확인하는 중…',5);
+  const engines=await loadConverterEngineBlobs(format);
+  if(converterAbortRequested)throw new Error('사용자가 변환을 취소했습니다.');
+  const frame=await ensureConverterSandbox();
+  if(converterAbortRequested)throw new Error('사용자가 변환을 취소했습니다.');
+  const id=++converterCurrentJobId;converterJobFileName=base+extension;converterJobFormat=format;
+  setConverterProgress('격리된 변환 공간에서 파일을 처리합니다…',8);
+  await new Promise((resolve,reject)=>{
+   converterJobResolve=resolve;converterJobReject=reject;
+   try{frame.contentWindow.postMessage({type:'convert',id,file,format,engines},'*')}
+   catch(err){converterJobResolve=converterJobReject=null;reject(new Error('변환 공간에 파일을 전달하지 못했습니다.'))}
+  });
+ }catch(err){console.error('Audio extraction failed',err);setConverterProgress(err.message||'변환에 실패했어요.',0)}
+ finally{converterBusy=false;$('startAudioExtract').disabled=!converterSourceFile;$('startAudioExtract').textContent='다시 변환';$('cancelAudioExtract').textContent='닫기';converterAbortRequested=false;}
+}
 function downloadBlob(blob,name){let u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),90000)}
 function supportedMime(alpha){if(!window.MediaRecorder)return '';const choice=$('exportFormat')?.value||'auto';const mp4=['video/mp4;codecs=avc1.42E01E,mp4a.40.2','video/mp4'];const webm=alpha?['video/webm;codecs=vp9,opus','video/webm;codecs=vp9']:['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'];const types=alpha?webm:choice==='mp4'?mp4:choice==='webm'?webm:[...webm,...mp4];return types.find(t=>MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(t))||''}
 function refreshExportFormatHint(){let mp4=window.MediaRecorder&&['video/mp4;codecs=avc1.42E01E,mp4a.40.2','video/mp4'].some(t=>MediaRecorder.isTypeSupported(t));$('exportFormatHint').textContent=mp4?'이 브라우저는 MP4 녹화를 지원합니다. 선택한 형식으로 저장할 수 있어요.':'현재 브라우저는 MP4 직접 녹화를 지원하지 않습니다. WebM을 선택하거나 변환이 필요합니다.';let opt=$('exportFormat').querySelector('option[value="mp4"]');opt.disabled=!mp4}refreshExportFormatHint();$('exportFormat').addEventListener('change',refreshExportFormatHint);
@@ -905,12 +1056,13 @@ function loadDesignPreset(){let list=readDesignPresets(),p=list.find(q=>q.id===$
 function duplicateDesignPreset(){let list=readDesignPresets(),p=list.find(q=>q.id===$('designPresetSelect').value);if(!p){toast('먼저 복제할 프리셋을 선택해 주세요.');return}let name=$('designPresetName').value.trim()||p.name+' copy';if(list.some(q=>q.name.toLowerCase()===name.toLowerCase()))name=name+' 2';let rec={id:'wf-'+Date.now()+'-'+Math.random().toString(36).slice(2,7),name,created:new Date().toISOString(),design:JSON.parse(JSON.stringify(p.design))};list.push(rec);try{writeDesignPresets(list);refreshDesignPresetSelect(rec.id);$('designPresetName').value=name;toast('프리셋을 복제했습니다.')}catch(e){toast('저장 공간이 부족합니다.')}}
 function deleteDesignPreset(){let id=$('designPresetSelect').value;if(!id){toast('삭제할 프리셋을 선택해 주세요.');return}let list=readDesignPresets().filter(p=>p.id!==id);writeDesignPresets(list);refreshDesignPresetSelect();$('designPresetName').value='';toast('프리셋을 삭제했습니다.')}
 function toggleTimeline(){let pane=document.querySelector('.timeline-pane'),collapsed=pane.classList.toggle('collapsed');$('timelineToggle').setAttribute('aria-expanded',String(!collapsed));$('timelineToggle').textContent=collapsed?'타임라인 펼치기 +':'타임라인 접기 −'}
-const PROJECT_DB='waveframe98.projectLibrary.v1',PROJECT_STORE='projects',ASSET_STORE='assets',ACTIVE_PROJECT_KEY='waveframe98.activeProject.v1';
+const PROJECT_DB='waveframe98.projectLibrary.v1',PROJECT_STORE='projects',ASSET_STORE='assets',LIBRARY_STORE='libraries',ACTIVE_PROJECT_KEY='waveframe98.activeProject.v1';
 let projectDbPromise=null,autoSaveTimer=null,autoSaveBusy=false,autoSaveAgain=false,skipPageHideSave=false,currentAudioAssetId=null,currentCoverAssetId=null,currentBgAssetId=null;
-function projectDB(){if(projectDbPromise)return projectDbPromise;projectDbPromise=new Promise((resolve,reject)=>{if(!('indexedDB'in window)){reject(new Error('이 브라우저는 IndexedDB를 지원하지 않습니다.'));return}navigator.storage?.persist?.().catch(()=>{});const req=indexedDB.open(PROJECT_DB,2);req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains(PROJECT_STORE))db.createObjectStore(PROJECT_STORE,{keyPath:'id'});if(!db.objectStoreNames.contains(ASSET_STORE))db.createObjectStore(ASSET_STORE,{keyPath:'id'})};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error||new Error('저장소를 열지 못했습니다.'))});return projectDbPromise}
+function projectDB(){if(projectDbPromise)return projectDbPromise;projectDbPromise=new Promise((resolve,reject)=>{if(!('indexedDB'in window)){reject(new Error('이 브라우저는 IndexedDB를 지원하지 않습니다.'));return}navigator.storage?.persist?.().catch(()=>{});const req=indexedDB.open(PROJECT_DB,3);req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains(PROJECT_STORE))db.createObjectStore(PROJECT_STORE,{keyPath:'id'});if(!db.objectStoreNames.contains(ASSET_STORE))db.createObjectStore(ASSET_STORE,{keyPath:'id'});if(!db.objectStoreNames.contains(LIBRARY_STORE))db.createObjectStore(LIBRARY_STORE,{keyPath:'id'})};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error||new Error('저장소를 열지 못했습니다.'))});return projectDbPromise}
 function idbStoreRequest(storeName,mode,action){return projectDB().then(db=>new Promise((resolve,reject)=>{const tx=db.transaction(storeName,mode),store=tx.objectStore(storeName);let req,result;try{req=action(store)}catch(e){reject(e);return}if(req){req.onsuccess=()=>{result=req.result};req.onerror=()=>reject(req.error||new Error('저장 작업에 실패했습니다.'))}tx.oncomplete=()=>resolve(req?result:true);tx.onerror=()=>reject(tx.error||new Error('저장 작업에 실패했습니다.'));tx.onabort=()=>reject(tx.error||new Error('저장 작업이 취소됐습니다.'))}))}
 function idbRequest(mode,action){return idbStoreRequest(PROJECT_STORE,mode,action)}
 function idbAssetRequest(mode,action){return idbStoreRequest(ASSET_STORE,mode,action)}
+function idbLibraryRequest(mode,action){return idbStoreRequest(LIBRARY_STORE,mode,action)}
 async function persistAssetBlob(blob,assetId){if(!blob)return null;const id=assetId||('wf-asset-'+Date.now()+'-'+Math.random().toString(36).slice(2,9));const existing=assetId?await idbAssetRequest('readonly',s=>s.get(id)):null;if(!existing?.blob)await idbAssetRequest('readwrite',s=>s.put({id,blob,name:blob.name||''}));return id}
 async function readAssetBlob(id){if(!id)return null;const rec=await idbAssetRequest('readonly',s=>s.get(id));return rec?.blob||null}
 async function persistCurrentAssets(){currentAudioAssetId=await persistAssetBlob(currentAudioBlob,currentAudioAssetId);currentCoverAssetId=await persistAssetBlob(currentCoverBlob,currentCoverAssetId);currentBgAssetId=await persistAssetBlob(currentBgBlob,currentBgAssetId);for(const st of stickers)st.assetId=await persistAssetBlob(st.blob,st.assetId)}
@@ -935,10 +1087,30 @@ function saveProject(){clearTimeout(autoSaveTimer);saveCurrentProject().then(ok=
 function renderStickerList(){const list=$('stickerList');if(!list)return;list.innerHTML='';if(!stickers.length){list.innerHTML='<div class="sticker-empty">아직 추가한 스티커가 없습니다.</div>';return}stickers.forEach((st,i)=>{const row=document.createElement('div');row.className='sticker-row'+(i===activeSticker?' active':'');const im=document.createElement('img');im.src=st.url;im.alt='';const b=document.createElement('button');b.type='button';b.textContent=st.name||('사진 스티커 '+(i+1));b.addEventListener('click',()=>selectSticker(i));const meta=document.createElement('small');meta.textContent=st.locked?'잠금':'선택';row.append(im,b,meta);row.addEventListener('click',()=>selectSticker(i));list.append(row)})}
 function selectSticker(i){activeSticker=(i>=0&&i<stickers.length)?i:-1;const st=stickers[activeSticker];if(st){$('stickerSize').value=st.widthPct||22;$('stickerRotation').value=st.rotation||0;$('stickerOpacity').value=st.opacity??100;$('stickerLocked').checked=!!st.locked}syncStickerControls();renderStickerList();render()}
 function syncStickerControls(){const st=stickers[activeSticker];['stickerSize','stickerRotation','stickerOpacity','stickerLocked','stickerDuplicate','stickerDelete'].forEach(id=>{const el=$(id);if(el)el.disabled=!st||((st.locked)&&!['stickerLocked'].includes(id))});if(st){$('stickerSizeOut').textContent=(st.widthPct||22)+'%';$('stickerRotationOut').textContent=(st.rotation||0)+'°';$('stickerOpacityOut').textContent=(st.opacity??100)+'%'}else{$('stickerSizeOut').textContent='22%';$('stickerRotationOut').textContent='0°';$('stickerOpacityOut').textContent='100%'}}
-function addStickerFile(file){if(!file||!file.type.startsWith('image/'))return;const url=URL.createObjectURL(file),img=new Image();img.onload=()=>{stickers.push({id:'st-'+Date.now()+'-'+Math.random().toString(36).slice(2,6),name:file.name,blob:file,assetId:null,url,img,x:50,y:50,widthPct:22,rotation:0,opacity:100,locked:false});selectSticker(stickers.length-1);scheduleAutoSave();toast('사진 스티커를 추가했어요. 미리보기에서 드래그해 배치하세요.')};img.onerror=()=>{URL.revokeObjectURL(url);toast('이미지를 불러오지 못했어요.')};img.src=url}
+async function isSafeRasterImage(file){
+ if(!file||file.size<24||file.size>30*1024*1024)return false;
+ try{
+  const b=new Uint8Array(await file.slice(0,Math.min(file.size,512*1024)).arrayBuffer());let width=0,height=0;
+  const png=b[0]===0x89&&b[1]===0x50&&b[2]===0x4e&&b[3]===0x47&&b[4]===0x0d&&b[5]===0x0a&&b[6]===0x1a&&b[7]===0x0a;
+  const jpg=b[0]===0xff&&b[1]===0xd8&&b[2]===0xff;
+  const webp=b[0]===0x52&&b[1]===0x49&&b[2]===0x46&&b[3]===0x46&&b[8]===0x57&&b[9]===0x45&&b[10]===0x42&&b[11]===0x50;
+  if(png&&b.length>=24){width=(b[16]*0x1000000)+(b[17]<<16)+(b[18]<<8)+b[19];height=(b[20]*0x1000000)+(b[21]<<16)+(b[22]<<8)+b[23]}
+  else if(jpg){for(let i=2;i+9<b.length;){if(b[i]!==0xff){i++;continue}let marker=b[i+1];if(marker===0xd8||marker===0xd9||marker===0x01||(marker>=0xd0&&marker<=0xd7)){i+=2;continue}if(i+4>=b.length)break;let len=(b[i+2]<<8)|b[i+3];if(len<2||i+2+len>b.length)break;if([0xc0,0xc1,0xc2,0xc3,0xc5,0xc6,0xc7,0xc9,0xca,0xcb,0xcd,0xce,0xcf].includes(marker)){height=(b[i+5]<<8)|b[i+6];width=(b[i+7]<<8)|b[i+8];break}i+=2+len}}
+  else if(webp&&b.length>=30){const kind=String.fromCharCode(b[12],b[13],b[14],b[15]);if(kind==='VP8X'){width=1+b[24]+(b[25]<<8)+(b[26]<<16);height=1+b[27]+(b[28]<<8)+(b[29]<<16)}else if(kind==='VP8 '&&b.length>=30){width=((b[26]&0x3f)<<8)|b[25];height=((b[28]&0x3f)<<8)|b[27]}else if(kind==='VP8L'&&b.length>=25&&b[20]===0x2f){width=1+(((b[22]&0x3f)<<8)|b[21]);height=1+(((b[24]&0x0f)<<10)|((b[23]&0xff)<<2)|((b[22]&0xc0)>>6))}}
+  else return false;
+  return width>0&&height>0&&width<=10000&&height<=10000&&width*height<=40000000;
+ }catch(_){return false}
+}
+async function addStickerFile(file){
+ if(!await isSafeRasterImage(file)){toast('PNG, JPG, WEBP 이미지(30MB 이하)만 스티커로 추가할 수 있어요.');return}
+ const url=URL.createObjectURL(file),img=new Image();img.onload=()=>{if(img.naturalWidth*img.naturalHeight>40000000){URL.revokeObjectURL(url);toast('이미지 해상도가 너무 커서 추가할 수 없어요.');return}stickers.push({id:'st-'+Date.now()+'-'+Math.random().toString(36).slice(2,6),name:file.name,blob:file,assetId:null,url,img,x:50,y:50,widthPct:22,rotation:0,opacity:100,locked:false});selectSticker(stickers.length-1);scheduleAutoSave();toast('사진 스티커를 추가했어요. 미리보기에서 드래그해 배치하세요.')};img.onerror=()=>{URL.revokeObjectURL(url);toast('이미지를 불러오지 못했어요.')};img.src=url
+}
 function duplicateSticker(){const st=stickers[activeSticker];if(!st?.blob)return;const url=URL.createObjectURL(st.blob),img=new Image();img.onload=()=>{stickers.push({...st,id:'st-'+Date.now()+'-'+Math.random().toString(36).slice(2,5),name:(st.name||'스티커')+' 복사',url,img,x:clamp((Number.isFinite(+st.x)?+st.x:50)+5,0,100),y:clamp((Number.isFinite(+st.y)?+st.y:50)+5,0,100),locked:false});selectSticker(stickers.length-1);scheduleAutoSave()};img.onerror=()=>{URL.revokeObjectURL(url);toast('스티커를 복제하지 못했어요.')};img.src=url}
 function deleteSticker(){if(activeSticker<0)return;const [st]=stickers.splice(activeSticker,1);if(st.url)URL.revokeObjectURL(st.url);activeSticker=Math.min(activeSticker,stickers.length-1);renderStickerList();syncStickerControls();render();scheduleAutoSave()}
-function uploadImage(file,kind){if(!file)return;let url=URL.createObjectURL(file),img=new Image();img.onload=()=>{if(kind==='cover'){currentCoverBlob=file;currentCoverAssetId=null;if(coverURL)URL.revokeObjectURL(coverURL);coverURL=url;coverImg=img;$('coverMeta').textContent=file.name;$('coverThumb').src=url;$('cropPreviewImage').src=url;updateCropPreview();$('mediaTitle').textContent=$('trackTitle').value||file.name;$('mediaArtist').textContent=$('artistName').value;$('mediaFile').textContent=file.name;if($('bgMode').value==='coverblur'){} }else{currentBgBlob=file;currentBgAssetId=null;if(bgURL)URL.revokeObjectURL(bgURL);bgURL=url;bgImg=img;$('bgMeta').textContent=file.name;$('bgMode').value='photo';document.querySelector('[data-tab="scene"]').click()}scheduleAutoSave(); };img.onerror=()=>toast('이미지 파일을 열 수 없습니다.');img.src=url}
+async function uploadImage(file,kind){
+ if(!file)return;if(!await isSafeRasterImage(file)){toast('PNG, JPG, WEBP 이미지(30MB 이하)만 사용할 수 있어요. SVG 등 스크립트가 포함될 수 있는 형식은 차단했습니다.');return}
+ let url=URL.createObjectURL(file),img=new Image();img.onload=()=>{if(img.naturalWidth*img.naturalHeight>40000000){URL.revokeObjectURL(url);toast('이미지 해상도가 너무 커서 추가할 수 없어요.');return}if(kind==='cover'){currentCoverBlob=file;currentCoverAssetId=null;if(coverURL)URL.revokeObjectURL(coverURL);coverURL=url;coverImg=img;$('coverMeta').textContent=file.name;$('coverThumb').src=url;$('cropPreviewImage').src=url;updateCropPreview();$('mediaTitle').textContent=$('trackTitle').value||file.name;$('mediaArtist').textContent=$('artistName').value;$('mediaFile').textContent=file.name;if($('bgMode').value==='coverblur'){} }else{currentBgBlob=file;currentBgAssetId=null;if(bgURL)URL.revokeObjectURL(bgURL);bgURL=url;bgImg=img;$('bgMeta').textContent=file.name;$('bgMode').value='photo';document.querySelector('[data-tab="scene"]').click()}scheduleAutoSave();};img.onerror=()=>{URL.revokeObjectURL(url);toast('이미지 파일을 열 수 없습니다.')};img.src=url
+}
 function updateDurationFromSources(){const next=Math.max(0,knownAudioDuration||0,knownVideoDuration||0);if(next>0&&Math.abs(next-duration)>.2){duration=next;const seek=clamp(audio.currentTime||0,0,duration);$('clock').textContent=fmt(seek)+' / '+fmt(duration);$('seek').value=duration?Math.round(seek/duration*1000):0;$('timelineDuration').textContent=fmt(duration);drawTimeline();if(lyricStudioOpenState)renderLyricStudio();renderLyricRows();scheduleAutoSave();}return duration}
 async function readMp4ContainerDuration(blob){
  try{
@@ -1015,6 +1187,7 @@ function probeContainerDuration(url){try{if(durationProbe){durationProbe.removeA
 $('audio').addEventListener('durationchange',()=>{if(Number.isFinite(audio.duration)&&audio.duration>0){knownAudioDuration=Math.max(knownAudioDuration,audio.duration);updateDurationFromSources()}});
 $('audioFile').addEventListener('change',async e=>{
  let file=e.target.files?.[0];if(!file)return;
+ if(file.size>500*1024*1024){toast('모바일 메모리 보호를 위해 500MB 이하 파일만 불러올 수 있어요.');e.target.value='';return}
  if(audioURL)URL.revokeObjectURL(audioURL);audioURL=URL.createObjectURL(file);currentAudioBlob=file;currentAudioAssetId=null;knownAudioDuration=0;knownVideoDuration=0;duration=0;if(durationProbe){durationProbe.removeAttribute('src');durationProbe.load();durationProbe=null}pause();audio.src=audioURL;audio.load();
  $('audioMeta').textContent=file.name;$('audioName').textContent=file.name;$('mediaFile').textContent=file.name;$('projectName').textContent=file.name;$('trackTitle').value=file.name.replace(/\.[^.]+$/,'');$('mediaTitle').textContent=$('trackTitle').value;
  setStatus('LOADING MEDIA · 오디오 트랙 확인 중');scheduleAutoSave();
@@ -1035,15 +1208,15 @@ $('audioFile').addEventListener('change',async e=>{
  audio.addEventListener('loadedmetadata',onMeta,{once:true});audio.addEventListener('error',onError,{once:true});
 });
 $('coverFile').addEventListener('change',e=>uploadImage(e.target.files?.[0],'cover'));$('bgFile').addEventListener('change',e=>uploadImage(e.target.files?.[0],'bg'));
-$('fontFile').addEventListener('change',async e=>{let f=e.target.files?.[0];if(!f)return;try{let name='WF_'+f.name.replace(/\.[^.]+$/,'').replace(/[^a-z0-9_-]/gi,'_');let ff=new FontFace(name,`url(${URL.createObjectURL(f)})`);await ff.load();document.fonts.add(ff);customFontName=name;$('customFontOption').disabled=false;$('customFontOption').textContent=name;$('fontFamily').value='custom';$('fontMeta').textContent=f.name;toast('사용자 폰트를 적용했습니다.')}catch(err){console.error(err);toast('폰트를 불러오지 못했습니다. TTF/OTF/WOFF2를 확인하세요.')}});
+$('fontFile').addEventListener('change',async e=>{let f=e.target.files?.[0];if(!f)return;if(f.size>10*1024*1024||f.size<12){toast('폰트는 10MB 이하 파일만 사용할 수 있어요.');e.target.value='';return}let u=null;try{const b=new Uint8Array(await f.slice(0,4).arrayBuffer()),sig=String.fromCharCode(...b);if(!(sig==='wOF2'||sig==='wOFF'||sig==='OTTO'||(b[0]===0&&b[1]===1&&b[2]===0&&b[3]===0)))throw new Error('지원하지 않는 폰트 형식');let name='WF_'+f.name.replace(/\.[^.]+$/,'').replace(/[^a-z0-9_-]/gi,'_');u=URL.createObjectURL(f);let ff=new FontFace(name,`url(${u})`);await ff.load();document.fonts.add(ff);customFontName=name;$('customFontOption').disabled=false;$('customFontOption').textContent=name;$('fontFamily').value='custom';$('fontMeta').textContent=f.name;toast('사용자 폰트를 적용했습니다.')}catch(err){console.error(err);toast('유효한 TTF/OTF/WOFF/WOFF2 폰트를 확인하세요.')}finally{if(u)URL.revokeObjectURL(u)}});
 $('playBtn').addEventListener('click',()=>playing?pause():play());$('previewPlay').addEventListener('click',()=>playing?pause():play());$('stopBtn').addEventListener('click',()=>{pause();seekTo(0)});audio.addEventListener('pause',()=>{if(!recording)playing=false});audio.addEventListener('play',()=>{playing=true});audio.addEventListener('timeupdate',()=>{if(!recording){$('clock').textContent=fmt(audio.currentTime)+' / '+fmt(duration);$('seek').value=duration?Math.round(audio.currentTime/duration*1000):0}});$('seek').addEventListener('input',e=>seekTo((+e.target.value/1000)*duration));
 $('aspectRatio').addEventListener('change',e=>resizeStage());document.querySelectorAll('.preset').forEach(b=>b.addEventListener('click',()=>applyLayout(b.dataset.layout)));
 $('inspectorTabs').addEventListener('click',e=>{let b=e.target.closest('[data-tab]');if(!b)return;document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t===b));document.querySelectorAll('.tab-page').forEach(p=>p.classList.toggle('active',p.id==='tab-'+b.dataset.tab));});
 $('cueLyric').addEventListener('click',()=>{let text=$('lyricDraft').value.trim();if(!text){toast('먼저 원어 가사를 입력해 주세요.');return}let item=addLyric(text,audio.currentTime||0);$('lyricDraft').value='';$('lyricDraft').focus();toast('현재 '+fmt(item.start)+' 시점에 가사를 추가했습니다.');});$('addLyricManual').addEventListener('click',()=>{let item=addLyric('');selectedLyric=lyrics.indexOf(item);let el=$('lyricList').querySelectorAll('.lyric-text-grid input')[selectedLyric*3];el?.focus()});
 $('importLyricGroups').addEventListener('click',()=>importLyricGroupsFromText($('lyricBulkText').value));
 $('pasteLyricClipboard').addEventListener('click',async()=>{try{let text=await navigator.clipboard.readText();if(!text)throw new Error('empty');$('lyricBulkText').value=$('lyricBulkText').value?$('lyricBulkText').value+'\n'+text:text;toast('클립보드 내용을 가져왔습니다. 자동 분리 버튼을 눌러 주세요.')}catch(e){$('lyricBulkText').focus();toast('클립보드 접근이 제한됐어요. 삼성노트에서 복사한 뒤 입력창을 길게 눌러 붙여넣어 주세요.')}});
-$('lyricTextFile').addEventListener('change',async e=>{let f=e.target.files?.[0];if(!f)return;let text=await f.text();if(/\[\d{1,2}:\d{2}/.test(text))importLrc(text);else{$('lyricBulkText').value=text;importLyricGroupsFromText(text)}e.target.value=''});
-$('lrcFile').addEventListener('change',async e=>{let f=e.target.files?.[0];if(!f)return;importLrc(await f.text());toast('LRC 가사를 불러왔습니다.');e.target.value=''});$('exportLrc').addEventListener('click',exportLrc);
+$('lyricTextFile').addEventListener('change',async e=>{let f=e.target.files?.[0];if(!f)return;if(f.size>2*1024*1024){toast('가사 파일은 2MB 이하만 불러올 수 있어요.');e.target.value='';return}let text=await f.text();if(/\[\d{1,2}:\d{2}/.test(text))importLrc(text);else{$('lyricBulkText').value=text;importLyricGroupsFromText(text)}e.target.value=''});
+$('lrcFile').addEventListener('change',async e=>{let f=e.target.files?.[0];if(!f)return;if(f.size>2*1024*1024){toast('LRC 파일은 2MB 이하만 불러올 수 있어요.');e.target.value='';return}importLrc(await f.text());toast('LRC 가사를 불러왔습니다.');e.target.value=''});$('exportLrc').addEventListener('click',exportLrc);
 $('markLyricStart').addEventListener('click',()=>{if(selectedLyric<0||!lyrics[selectedLyric]){toast('먼저 타이밍을 조정할 가사를 선택해 주세요.');return}let l=lyrics[selectedLyric];l.start=clamp(audio.currentTime||0,0,Math.max(0,l.end-.1));renderLyricRows();toast('선택한 가사의 시작 시간을 현재 위치로 기록했습니다.')});
 $('markLyricEnd').addEventListener('click',()=>{if(selectedLyric<0||!lyrics[selectedLyric]){toast('먼저 타이밍을 조정할 가사를 선택해 주세요.');return}let l=lyrics[selectedLyric];l.end=Math.max(l.start+.1,audio.currentTime||l.start+1);if(duration)l.end=Math.min(duration,l.end);renderLyricRows();toast('선택한 가사의 종료 시간을 현재 위치로 기록했습니다.')});
 $('workTabs').addEventListener('click',e=>{let b=e.target.closest('[data-work-view-button]');if(b)setWorkView(b.dataset.workViewButton)});$('openLyricStudioTop').addEventListener('click',openLyricStudio);$('lyricStudioOpen').addEventListener('click',openLyricStudio);$('lyricStudioDone').addEventListener('click',closeLyricStudio);
@@ -1088,7 +1261,13 @@ stage.addEventListener('pointerdown',e=>{if(previewMode)return;let r=stage.getBo
  if(dragTarget){if(dragTarget==='sticker')selectSticker(activeSticker);stage.setPointerCapture(e.pointerId);dragStart={x,y};e.preventDefault()}});
 stage.addEventListener('pointermove',e=>{if(!dragTarget)return;let r=stage.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*logicalW,y=(e.clientY-r.top)/r.height*logicalH;if(dragTarget==='sticker'){const st=stickers[activeSticker];if(!st||st.locked)return;st.x=clamp(x/logicalW*100,0,100);st.y=clamp(y/logicalH*100,0,100);render();return}let idX=dragTarget==='cover'?'coverX':dragTarget==='caption'?'captionX':dragTarget==='viz'?'vizX':dragTarget==='title'?'titleX':'artistX',idY=dragTarget==='cover'?'coverY':dragTarget==='caption'?'captionY':dragTarget==='viz'?'vizY':dragTarget==='title'?'titleY':'artistY';state[idX]=clamp(x/logicalW*100,0,100);state[idY]=clamp(y/logicalH*100,0,100);setValue(idX,Math.round(state[idX]));setValue(idY,Math.round(state[idY]));updatePositionLabels()});stage.addEventListener('pointerup',()=>{if(dragTarget==='sticker')scheduleAutoSave();dragTarget=null});stage.addEventListener('pointercancel',()=>{if(dragTarget==='sticker')scheduleAutoSave();dragTarget=null});
 $('openAudioTop').addEventListener('click',()=>$('audioFile').click());$('openCoverTop').addEventListener('click',()=>$('coverFile').click());$('saveProject').addEventListener('click',saveProject);$('undoBtn').addEventListener('click',()=>seekTo(0));$('exportTop').addEventListener('click',openExport);$('closeExport').addEventListener('click',()=>$('exportModal').classList.remove('open'));$('cancelExport').addEventListener('click',()=>$('exportModal').classList.remove('open'));$('startExport').addEventListener('click',startExport);
-$('menuFile').addEventListener('click',()=>openExport());$('menuEdit').addEventListener('click',()=>document.querySelector('[data-tab="lyrics"]').click());$('menuView').addEventListener('click',()=>document.querySelector('[data-tab="visual"]').click());$('menuHelp').addEventListener('click',()=>alert('WAVEFRAME 98 도움말\n1. 음악 파일과 앨범 커버를 불러옵니다.\n2. 레이아웃 프리셋을 선택합니다.\n3. 음악을 재생하면서 자막을 현재 시점에 추가합니다.\n4. 파형과 커버는 화면에서 드래그하거나 속성 관리자에서 위치를 조절합니다.\n5. 다국어 가사는 원어·번역·발음을 묶어 넣고 자동 분리할 수 있습니다.\n6. 가사 블록 전용 편집 화면에서 가운데 이동과 양끝 길이 조절을 사용합니다.\n7. 전체 음악 길이를 브라우저가 지원하는 형식으로 내보냅니다.'));
+$('menuTools').addEventListener('click',openAudioExtract);
+$('closeAudioExtract').addEventListener('click',closeAudioExtract);$('cancelAudioExtract').addEventListener('click',closeAudioExtract);
+$('audioExtractModal').addEventListener('click',e=>{if(e.target===$('audioExtractModal'))closeAudioExtract()});
+$('converterFileInput').addEventListener('change',e=>{const file=e.target.files?.[0];if(file&&(!/\.(mp4|m4v)$/i.test(file.name)||file.size>200*1024*1024||file.size<16)){toast('MP4/M4V 형식이며 200MB 이하인 파일만 선택할 수 있어요.');e.target.value='';converterSourceFile=null;$('startAudioExtract').disabled=true;return}converterSourceFile=file||null;if(file){$('converterFileTitle').textContent=file.name;$('converterFileMeta').textContent=(file.size/1048576).toFixed(1)+'MB · 기기 내부 처리';$('converterFileName').value=converterFileBase(file.name);$('startAudioExtract').disabled=false;setConverterProgress('파일을 선택했어요. 저장 형식을 고르고 변환을 시작하세요.',0)}else{$('converterFileTitle').textContent='영상 파일 선택';$('converterFileMeta').textContent='MP4 · M4V';$('startAudioExtract').disabled=true;setConverterProgress('MP4 파일을 선택해 주세요.',0)}});
+document.querySelectorAll('input[name="converterFormat"]').forEach(el=>el.addEventListener('change',updateConverterExtension));
+$('startAudioExtract').addEventListener('click',runAudioExtract);
+$('menuFile').addEventListener('click',()=>openExport());$('menuEdit').addEventListener('click',()=>document.querySelector('[data-tab="lyrics"]').click());$('menuView').addEventListener('click',()=>document.querySelector('[data-tab="visual"]').click());$('menuHelp').addEventListener('click',()=>alert('WAVEFRAME 98 도움말\n1. 음악 파일과 앨범 커버를 불러옵니다.\n2. 레이아웃 프리셋을 선택합니다.\n3. 음악을 재생하면서 자막을 현재 시점에 추가합니다.\n4. 파형과 커버는 화면에서 드래그하거나 속성 관리자에서 위치를 조절합니다.\n5. 다국어 가사는 원어·번역·발음을 묶어 넣고 자동 분리할 수 있습니다.\n6. 가사 블록 전용 편집 화면에서 가운데 이동과 양끝 길이 조절을 사용합니다.\n7. 전체 음악 길이를 브라우저가 지원하는 형식으로 내보냅니다.\n8. 도구함에서 MP4의 AAC 오디오를 M4A로 원본 추출하거나 MP3 320kbps로 변환할 수 있습니다.'));
 window.addEventListener('beforeunload',e=>{if(recording){e.preventDefault();e.returnValue='렌더링이 진행 중입니다.'}});
 
 const ELEMENT_LOCKS={
@@ -1131,7 +1310,7 @@ $('addStickerBtn').addEventListener('click',()=>$('stickerFile').click());$('sti
 document.querySelector('.window').addEventListener('input',e=>{if(e.target.id!=='lyricStudioZoom')scheduleAutoSave()});document.querySelector('.window').addEventListener('change',e=>{if(e.target.type!=='file')scheduleAutoSave()});document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveCurrentProject({silent:true})});
 window.addEventListener('pagehide',()=>{clearTimeout(autoSaveTimer);if(!skipPageHideSave)saveCurrentProject({silent:true})});
 // Initial visual treatment and preview clock.
-$('coverThumb').src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#253650"/><stop offset=".55" stop-color="#927a83"/><stop offset="1" stop-color="#d7a88f"/></linearGradient></defs><rect width="120" height="120" fill="url(#g)"/><circle cx="60" cy="55" r="32" fill="none" stroke="#ead9c5" stroke-width="1.5"/><circle cx="60" cy="55" r="24" fill="none" stroke="#ead9c5" opacity=".6"/><text x="60" y="99" text-anchor="middle" font-family="Georgia" font-size="10" fill="white">WAVEFRAME</text></svg>');resizeStage();applyLayout('center');updatePositionLabels();updateCropPreview();$('lyricStudioZoom').value=lyricStudioZoom;renderLyricRows();updateLyricLineControls();syncElementLocks(true);setWorkView('scene');renderStickerList();syncStickerControls();setStatus('READY · WAVEFRAME 98 V5.3',false);render();refreshProjectLibrary().catch(()=>{});restoreActiveProjectIfExists();
+$('coverThumb').src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#253650"/><stop offset=".55" stop-color="#927a83"/><stop offset="1" stop-color="#d7a88f"/></linearGradient></defs><rect width="120" height="120" fill="url(#g)"/><circle cx="60" cy="55" r="32" fill="none" stroke="#ead9c5" stroke-width="1.5"/><circle cx="60" cy="55" r="24" fill="none" stroke="#ead9c5" opacity=".6"/><text x="60" y="99" text-anchor="middle" font-family="Georgia" font-size="10" fill="white">WAVEFRAME</text></svg>');resizeStage();applyLayout('center');updatePositionLabels();updateCropPreview();$('lyricStudioZoom').value=lyricStudioZoom;renderLyricRows();updateLyricLineControls();syncElementLocks(true);setWorkView('scene');renderStickerList();syncStickerControls();setStatus('READY · WAVEFRAME 98 FIX9',false);render();refreshProjectLibrary().catch(()=>{});restoreActiveProjectIfExists();
 })();
 </script>
 
@@ -1156,7 +1335,7 @@ $('coverThumb').src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent('<svg
   if(pending){const e=pending;pending=null;try{await e.prompt();const c=await e.userChoice;label(c.outcome==='accepted'?'설치 요청됨':'앱 설치')}catch(err){alert('Chrome 설치창을 열지 못했습니다. Chrome 메뉴에서 설치를 확인해 주세요.')}return}
   const d=await diagnostics();alert(['WAVEFRAME 98 설치 진단','',`HTTPS 보안 연결: ${d.secure?'정상':'실패'}`,`매니페스트와 아이콘: ${d.manifestOK?'정상':'확인 필요'}`,`서비스 워커 등록: ${d.swOK?'정상':'확인 필요'}`,`Chrome 설치 이벤트: ${d.prompt?'준비됨':'아직 전달되지 않음'}`,d.manifestError,d.manifestURL?`매니페스트 주소: ${d.manifestURL}`:'',d.swError,d.scope?`서비스 워커 범위: ${d.scope}`:'',`현재 서비스 워커 제어: ${d.controller?'예':'아니오'}`,'Chrome이 설치 가능하다고 판단하기 전에는 사이트가 설치를 강제로 실행할 수 없습니다.'].filter(Boolean).join('\n'));
  });
- async function registerSW(){if(!('serviceWorker'in navigator)||!isSecureContext)return;try{const script=new URL('./service-worker-fix7.js',document.baseURI);const scope=new URL('./',document.baseURI);const reg=await navigator.serviceWorker.register(script.href,{scope:scope.pathname,updateViaCache:'none'});await reg.update().catch(()=>{});console.info('[WAVEFRAME PWA] SW scope:',reg.scope)}catch(e){console.error('[WAVEFRAME PWA] SW registration failed',e)}}
+ async function registerSW(){if(!('serviceWorker'in navigator)||!isSecureContext)return;try{const script=new URL('./service-worker-fix9.js',document.baseURI);const scope=new URL('./',document.baseURI);const reg=await navigator.serviceWorker.register(script.href,{scope:scope.pathname,updateViaCache:'none'});await reg.update().catch(()=>{});console.info('[WAVEFRAME PWA] SW scope:',reg.scope)}catch(e){console.error('[WAVEFRAME PWA] SW registration failed',e)}}
  if(document.readyState==='complete')registerSW();else addEventListener('load',registerSW,{once:true});
  window.waveframePwaDiagnostics=diagnostics;
 })();

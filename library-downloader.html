@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-LBo0NOAyeH4Db0z/R7P3LXMTqf7QaNUO+HsqM77F4Fk='; connect-src https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'none'; style-src 'none'; font-src 'none'; media-src 'none'; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>WAVEFRAME 98 library downloader</title>
+</head>
+<body>
+<script>
+(()=>{'use strict';
+const ENGINES={
+ lame:{url:'https://cdnjs.cloudflare.com/ajax/libs/lamejs/1.2.1/lame.all.min.js',type:'text/javascript'},
+ mp4box:{url:'https://cdn.jsdelivr.net/npm/mp4box@2.6.0/dist/mp4box.all.js',type:'text/javascript'}
+};
+let busy=false;
+const send=data=>{try{parent.postMessage(data,'*')}catch(_){}};
+function checkResponse(response,key){
+ if(!response.ok)throw new Error('변환 도구를 내려받지 못했습니다. 인터넷 연결을 확인해 주세요.');
+ const type=(response.headers.get('content-type')||'').toLowerCase();
+ if(!/(javascript|ecmascript|text\/plain)/.test(type))throw new Error('변환 도구 서버가 JavaScript가 아닌 응답을 보냈습니다. 실행을 중단했습니다.');
+ return response.blob().then(async blob=>{
+  if(blob.size<1000||blob.size>3*1024*1024)throw new Error('변환 도구의 파일 크기가 예상 범위를 벗어났습니다.');
+  const prefix=(await blob.slice(0,256).text()).trimStart().toLowerCase();
+  if(prefix.startsWith('<!doctype')||prefix.startsWith('<html')||prefix.startsWith('<?xml'))throw new Error('변환 도구 대신 웹 페이지가 반환되어 실행을 중단했습니다.');
+  return blob;
+ });
+}
+window.addEventListener('message',async event=>{
+ if(event.source!==parent)return;
+ const msg=event.data;if(!msg||typeof msg!=='object')return;
+ if(msg.type==='ping'){send({type:'ready'});return;}
+ if(msg.type!=='download'||!Number.isSafeInteger(msg.id)||busy)return;
+ const def=ENGINES[msg.engineKey];if(!def){send({type:'error',id:msg.id,message:'허용되지 않은 라이브러리 항목입니다.'});return;}
+ busy=true;
+ try{
+  send({type:'progress',id:msg.id,message:'정해진 변환 도구 주소에 연결하는 중…'});
+  const response=await fetch(def.url,{mode:'cors',cache:'force-cache',credentials:'omit',referrerPolicy:'no-referrer',redirect:'error',headers:{Accept:'application/javascript,text/javascript,*/*'}});
+  const blob=await checkResponse(response,msg.engineKey);
+  send({type:'downloaded',id:msg.id,engineKey:msg.engineKey,blob});
+ }catch(error){send({type:'error',id:msg.id,message:String(error?.message||error||'다운로드 실패').slice(0,300)});}
+ finally{busy=false;}
+});
+send({type:'booted'});
+})();
+</script>
+</body>
+</html>
